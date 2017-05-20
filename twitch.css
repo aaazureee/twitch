@@ -103,3 +103,7 @@ a:active {
     background-color: transparent;
     text-decoration: none;
 }
+
+.loading {
+    margin-top: 20px;
+}

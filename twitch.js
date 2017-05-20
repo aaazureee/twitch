@@ -36,6 +36,7 @@ $(document).ready(function () {
     };
 
     $(document).ajaxStop(function () {
+        $(".loading").hide();
         online.sort(function (a, b) {
             if (a.viewer > b.viewer) {
                 return -1;
@@ -44,6 +45,8 @@ $(document).ready(function () {
             }
             return 0;
         });
+
+        $("thead").append("<tr><th width='23%'>Channel</th><th width='20%'>Game</th><th width='45%'>Title</th><th width='10%'>Viewer</th></tr>");
 
         for (var i = 0; i < online.length; i++) {
             if (online[i].icon !== null) {
