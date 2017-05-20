@@ -1,0 +1,86 @@
+html,
+body {
+    background-color: #141414;
+}
+
+body {
+    color: #F5F4F7;
+    text-align: center;
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
+
+.fa-twitch {
+    color: #4B367C;
+}
+
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+
+.cover-container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.masthead-brand {
+    margin-bottom: 0;
+    font-family: 'Roboto Slab', serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table {
+    background-color: #1E1E1E;
+    text-align: left;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+    background-color: #392E5C;
+    cursor: pointer;
+}
+
+.test {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+@media (max-width: 767px) {
+    .test {
+        width: 20%;
+        margin-left: 0px;
+    }
+    .masthead-brand {
+        margin-left: 80px;
+    }
+}
+
+#red {
+    height: .8rem;
+    width: .8rem;
+    border-radius: .4rem;
+    background-color: #fc3636;
+    display: inline-block;
+}
+
+.icon {
+    display: inline-block;
+    width: 30%;
+    border-radius: 50%;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+    margin-right: 10px;
+}
+
+.icon-offline {
+    display: inline-block;
+    width: 30%;
+    border-radius: 50%;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+    margin-right: 10px;
+    filter: grayscale(80%);
+}
