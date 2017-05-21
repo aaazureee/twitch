@@ -29,11 +29,11 @@ $(document).ready(function () {
                                 icon: data2.logo
                             });
                         }
-                    })
+                    });
                 }
             }
         });
-    };
+    }
 
     $(document).ajaxStop(function () {
         $(".loading").hide();
@@ -46,7 +46,7 @@ $(document).ready(function () {
             return 0;
         });
 
-        $("thead").append("<tr><th width='23%'>Channel</th><th width='20%'>Game</th><th width='45%'>Title</th><th width='10%'>Viewer</th></tr>");
+        $("thead").append("<tr><th style='width:30%'>Channel</th><th class = 'game'>Game</th><th>Title</th><th style='width:15%'>Viewers</th></tr>");
 
         for (var i = 0; i < online.length; i++) {
             if (online[i].icon !== null) {

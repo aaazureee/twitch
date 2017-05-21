@@ -16,11 +16,6 @@ body {
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 
-.cover-container {
-    margin-right: auto;
-    margin-left: auto;
-}
-
 .masthead-brand {
     margin-bottom: 0;
     font-family: 'Roboto Slab', serif;
@@ -44,16 +39,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-}
-
-@media (max-width: 767px) {
-    .test {
-        width: 20%;
-        margin-left: 0px;
-    }
-    .masthead-brand {
-        margin-left: 80px;
-    }
 }
 
 #red {
