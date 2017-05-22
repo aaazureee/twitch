@@ -5,10 +5,10 @@ $(document).ready(function () {
     var k = 0;
     for (let i = 0; i < streamList.length; i++) {
         $.ajax({
-            url: "https://api.twitch.tv/kraken/streams/" + streamList[i] + "?client_id=rznf9ecq10bbcwe91n6hhnul3dbpg9",
-            dataType: 'json',
-            cache: false,
-            success: function (data) {
+                url: "https://api.twitch.tv/kraken/streams/" + streamList[i] + "?client_id=rznf9ecq10bbcwe91n6hhnul3dbpg9",
+                dataType: 'json'
+            })
+            .done(function (data) {
                 if (data.stream !== null) {
                     online[k++] = {
                         channel: data.stream.channel.display_name,
@@ -19,10 +19,10 @@ $(document).ready(function () {
                     };
                 } else if (data.stream === null) {
                     $.ajax({
-                        url: "https://api.twitch.tv/kraken/channels/" + streamList[i] + "?client_id=rznf9ecq10bbcwe91n6hhnul3dbpg9",
-                        dataType: 'json',
-                        cache: false,
-                        success: function (data2) {
+                            url: "https://api.twitch.tv/kraken/channels/" + streamList[i] + "?client_id=rznf9ecq10bbcwe91n6hhnul3dbpg9",
+                            dataType: 'json'
+                        })
+                        .done(function (data2) {
                             offline.push({
                                 channel: data2.display_name,
                                 game: data2.game,
@@ -30,13 +30,10 @@ $(document).ready(function () {
                                 viewer: "Offline",
                                 icon: data2.logo
                             });
-                        }
-                    });
+                        });
                 }
-            }
-        });
+            });
     }
-
     $(document).ajaxStop(function () {
         $(".loading").hide();
         online.sort(function (a, b) {
