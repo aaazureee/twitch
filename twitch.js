@@ -45,7 +45,7 @@ $(document).ready(function () {
             return 0;
         });
 
-        $("thead").append("<tr><th style='width:30%'>Channel</th><th class = 'game'>Game</th><th>Title</th><th style='width:15%'>Viewers</th></tr>");
+        $("thead").append("<tr><th style='width:35%'>Channel</th><th class = 'game'>Game</th><th>Title</th><th style='width:15%'>Viewers</th></tr>");
 
         for (var i = 0; i < online.length; i++) {
             if (online[i].icon !== null) {
