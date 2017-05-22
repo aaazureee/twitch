@@ -32,6 +32,7 @@ body {
 .table-hover tbody tr:hover th {
     background-color: #392E5C;
     cursor: pointer;
+    color: #FDFDFE;
 }
 
 .test {
