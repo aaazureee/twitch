@@ -7,6 +7,7 @@ $(document).ready(function () {
         $.ajax({
             url: "https://api.twitch.tv/kraken/streams/" + streamList[i] + "?client_id=rznf9ecq10bbcwe91n6hhnul3dbpg9",
             dataType: 'json',
+            cache: false,
             success: function (data) {
                 if (data.stream !== null) {
                     online[k++] = {
@@ -20,6 +21,7 @@ $(document).ready(function () {
                     $.ajax({
                         url: "https://api.twitch.tv/kraken/channels/" + streamList[i] + "?client_id=rznf9ecq10bbcwe91n6hhnul3dbpg9",
                         dataType: 'json',
+                        cache: false,
                         success: function (data2) {
                             offline.push({
                                 channel: data2.display_name,
