@@ -35,7 +35,7 @@ $(document).ready(function () {
             });
     }
     $(document).ajaxStop(function () {
-        $(".loading").hide();
+        $(".loading").detach();
         online.sort(function (a, b) {
             if (a.viewer > b.viewer) {
                 return -1;
