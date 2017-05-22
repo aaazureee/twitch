@@ -35,6 +35,7 @@ $(document).ready(function () {
             });
     }
     $(document).ajaxStop(function () {
+        $("table").addClass("animated fadeIn");
         $(".loading").detach();
         online.sort(function (a, b) {
             if (a.viewer > b.viewer) {
