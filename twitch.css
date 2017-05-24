@@ -29,6 +29,12 @@ body {
     text-align: left;
 }
 
+thead {
+    border-bottom-style: solid;
+    border-bottom-color: #333333;
+    border-bottom-width: 1px;
+}
+
 .table-hover tbody tr:hover td,
 .table-hover tbody tr:hover th {
     background-color: #392E5C;
@@ -93,4 +99,13 @@ a:active {
 
 .loading {
     margin-top: 20px;
+}
+
+.table>tbody>tr>td {
+    vertical-align: middle;
+}
+
+.borderless td,
+.borderless th {
+    border: none !important;
 }
