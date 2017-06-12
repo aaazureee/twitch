@@ -62,7 +62,7 @@ $(document).ready(function () {
                 }
                 return 0;
             });
-
+            // Append data based on online/offline status
             $("thead").append("<tr><th style='width:25%' class = 'channel'>Channel</th><th class = 'game' style = 'width:20%'>Game</th><th>Title</th><th style = 'width: 15%'>Viewers</th></tr>");
 
             for (var i = 0; i < online.length; i++) {
@@ -80,9 +80,24 @@ $(document).ready(function () {
                     $(".table").append("<tr><td class='name' style='color:#B2ADBF'><img class ='icon-offline' src='https://i.imgur.com/0C7WUis.png'>" + offline[j].channel + "</td><td style='color:#B2ADBF'><em>" + offline[j].game + "</em></td><td style='color:#B2ADBF'>" + offline[j].title + "</td><td style='color:#B2ADBF'>" + offline[j].viewer + "</td></tr>");
                 }
             }
-
-            $("tbody tr").click(function () {
-                window.open("https://www.twitch.tv/" + $(this).find('td.name').text());
+            // Make every row a clickable link
+            var mywidth = $(".table").width();
+            $('.table>tbody>tr>td:nth-child(1)').each(function () {
+                $(this).css('position', 'relative');
+                var myA = $('<a></a>');
+                $(this).append(myA);
+                var myheight = $("this").innerHeight();
+                var link = "https://twitch.tv/" + $(this).text();
+                myA.css({
+                        'display': 'block',
+                        'left': '0',
+                        'top': '0',
+                        'bottom': '0',
+                        'position': 'absolute'
+                    })
+                    .attr('href', link)
+                    .width(mywidth)
+                    .height(myheight);
             });
         });
     });
