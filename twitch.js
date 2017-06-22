@@ -87,12 +87,12 @@ $(() => {
             }
             // Make every row a clickable link
             var mywidth = $(".table").width();
-            $('.table>tbody>tr>td:nth-child(1)').each(() => {
-                $(this).css('position', 'relative');
+            $('.table>tbody>tr>td:nth-child(1)').each((index, element) => {
+                $(element).css('position', 'relative');
                 var myA = $('<a></a>');
-                $(this).append(myA);
-                var myheight = $("this").innerHeight();
-                var link = "https://twitch.tv/" + $(this).text();
+                $(element).append(myA);
+                var myheight = $(element).outerHeight();
+                var link = "https://twitch.tv/" + $(element).text().replace(" ", "");
                 myA.css({
                         'display': 'block',
                         'left': '0',
