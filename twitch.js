@@ -91,7 +91,7 @@ $(() => {
                 $(element).css('position', 'relative');
                 var myA = $('<a></a>');
                 $(element).append(myA);
-                var myheight = $(element).outerHeight();
+                var myheight = $(element).outerHeight() + 50;
                 var link = "https://twitch.tv/" + $(element).text().replace(" ", "");
                 myA.css({
                         'display': 'block',
