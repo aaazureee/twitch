@@ -100,7 +100,10 @@ $(() => {
                         'bottom': '0',
                         'position': 'absolute'
                     })
-                    .attr('href', link)
+                    .attr({
+                        'href': link,
+                        'target': "_blank"
+                    })
                     .width(mywidth)
                     .height(myheight);
             });
