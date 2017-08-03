@@ -1,4 +1,5 @@
 $(() => {
+    jQuery.support.cors = true;
     var streamList = ["HSdogdog", "AdmiralBulldog", "vanNDota", "DreamLeague", "WubWoofWolf", "17uu", "lamperkat", "febbydoto", "Arteezy", "AmazHS", "Moonmeander", "WagamamaTV", "dotademon", "feardota", "esl_dota2", "monkeys_forever", "Dendi", "sheevergaming", "BigDaddy", "Draskyl", "Chessie", "FollowAkke", "bOne7", "attackerdota", "noobfromua", "egm", "qojqva", "alohadancetv", "pajkattdota", "dotastarladder_en", "barnyyy", "zai", "aui_2000", "universedota", "ppd", "fogged", "purgegamers", "meraclechamlotte", "7ckngmad", "miracle_doto", "puppey", "h4nn1", "420jenkins", "illidanstrdoto", "sumaildoto", "jeraxai", "grandgrant", "jeyodude", "bananaslamjamma", "yawar_", "merlinidota", "beyondthesummit", "s4", "stormspirittv", "synderen", "funn1k", "emperorpenguin83", "kano", "miserytheslayer", "reimudesu", "shigetora", "matumbaman", "era17", "sneykingdota", "siractionslacks", "moodota2", "dizzykitten", "sakurafrost225", "Rafis0", "odpixel", "d47biryu", "vampyrette", "w33haa", "blitzdota", "ritsugamer", "limmp", "himegurecia", "dotamajor", "babyknight", "ccncdota2", "lil_hardy", "angelsimosu", "vankhoahoang", "resolut1ontv", "blackdotatv", "sing_sing", "midone", "eternalenvyy", "dotacapitalist", "keemerah", "osu_HDHR", "mssdota", "epicenter_en1", "koushudota", "yapzordota", "moonducktv", "pikachama", "qSnake_", "stan_king", "dota2fata", "madaradota2", "braxton911", "cr1tdota", "mikah138", "evilgeniuses", "dotagasm", "official_niqua", "arise_3012", "nooneboss", "forev", "ramzesdoto", "aliastar", "bububu", "0timado0", "envybaer", "smashdota", "nurbika", "brinkdota", "canceldota", "qodota2", "day9tv", "zingle313", "kvhdota", "abed_dota", "ohaiyodota", "boris_dota", "gorgcc", "ltt98", "pgl_dota", "spare", "hfndota", "happystick", "itshafu", "thijshs", "qsnake", "lizzarddota2", "ek0p", "godot", "chainsito11", "freecodecamp", "epicenter_en2", "Clarkeezy", "NoctisAK47", "Solitary_Judge", "khezzu", "beyondthesummit2", "beyondthesummit3", "beyondthesummit4", "kennietv", "zotac_cup", "rime_"];
     var online = [];
     var offline = [];
@@ -8,7 +9,8 @@ $(() => {
     for (let i = 0; i < streamList.length; i++) {
         var request = $.ajax({
             url: "https://api.twitch.tv/kraken/streams/" + streamList[i] + "?client_id=rznf9ecq10bbcwe91n6hhnul3dbpg9",
-            dataType: 'json'
+            dataType: 'json',
+            cache: false
         });
 
         request.done(data => {
@@ -23,7 +25,8 @@ $(() => {
             } else if (data.stream === null) {
                 var request2 = $.ajax({
                     url: "https://api.twitch.tv/kraken/channels/" + streamList[i] + "?client_id=rznf9ecq10bbcwe91n6hhnul3dbpg9",
-                    dataType: 'json'
+                    dataType: 'json',
+                    cache: false
                 });
 
                 request2.done(data2 => {
@@ -67,7 +70,7 @@ $(() => {
                 return 0;
             });
             // Append data based on online/offline status
-            $("thead").append(`<tr><th style='width:25%' class = 'channel'>Channel</th><th class = 'game' style = 'width:20%'>Game</th><th>Title</th><th style = 'width: 15%'>Viewers</th></tr>`);
+            $("thead").append(`<tr><th style='width: 35%' class='channel'>Channel</th><th class='game' style='width: 20%'>Game</th><th style='width: 33%'>Title</th><th style='width: 12%'>Viewers</th></tr>`);
 
             for (var i in online) {
                 if (online[i].icon !== null) {
